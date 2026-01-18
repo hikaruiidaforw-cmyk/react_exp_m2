@@ -3,7 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useEffect, useState } from 'react'
+
+import Header from './layout/Header';
+import SlideBar from './layout/SlideBar';
+import CalendarItem from './components/CalendarItem';
+import Chart from './components/Chart';
 import News from './components/News';
+
 
 function App() {
 
@@ -27,7 +33,14 @@ function App() {
   return (
     <>
      {/*  */}
+     <Header /> 
+     <SlideBar />
      <News />
+     <CalendarItem />
+     <Chart />
+
+     
+
 
      <div>
       <p>名前が入ります </p>
