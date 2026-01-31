@@ -1,6 +1,6 @@
 // import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import { useEffect, useState } from 'react'
 
@@ -10,47 +10,19 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/notfound";
 import Customer from "./pages/customer";
 import Orders from "./pages/orders";
+import{useForm} from "./hooks/useForm";
+
 
 function App() {
 
-  const[name,setName] = useState("名前入力");
-  const[email,setEmail] = useState("メールアドレス入力");
-
-  const[data,setData] = useState([]);
-
-
-  const handleNameChange = (e) => {
-   setName(e.target.value);
-  }
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-   }
-
-   useEffect(()=>{
-    console.log("起動しました！！！！！")
-
-    const fetchData = async () => {
-     try{
-      const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-      console.log(response,"response");
-
-      const data = await response.json();
-      console.log(data,"中身");
-
-    setData(data);
-
-
-     }catch(error){ }
-
-    };
-
-    fetchData();
-
-
-   },[] );
-
-   console.log("順番の確認");
+  const{
+    handleNameChange,
+    handleEmailChange,
+    name,
+    email,
+    data,
+   
+    } = useForm();
 
   return (
     <>
@@ -74,13 +46,13 @@ function App() {
      <CalendarItem />
      <Chart /> */}
 
-{data.map((item,index) => (
+{/* {data.map((item,index) => (
         <div key={index}>
           <p>{item.id}</p>
           <p>{item.title}</p>
           <p>{item.userId}</p>
         </div>
-      ))}
+      ))} */}
 
 
      {/* <div>
